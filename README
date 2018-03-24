@@ -1,0 +1,21 @@
+# Calculator
+
+A command line calculator (work-in-progress).
+Features include:
+- Variables
+- Functions
+- Matrices
+
+# Syntax
+
+Operators include `a + b`, `a - b`, `a * b`, `a / b`, `a ^ b`, `-a`, and `a!`.
+Call functions with parentheses, such as `sqrt(2)` or `root(3, 27)`.
+Create a matrix with `[1, 2; 3, 4]` where `,` indicates the next column and `;` indicates the next row.
+Find the determinant with `det(m)` (only works with 2x2 for now).
+
+Declare variables using `let name = expression`.
+Declare functions using `let name(a, b, c) = expression`.
+
+See grammar.bnf for exact details.
+
+Run commands using `:command`, for example, `:help` or `:quit`.

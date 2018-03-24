@@ -1,0 +1,37 @@
+Start
+    = Command EOF
+
+Command
+    = "let" Assignment
+    | Expression
+
+Assignment
+    = IDENTIFIER "=" Expression
+    | IDENTIFIER "(" (IDENTIFIER ("," IDENTIFIER):*):? ")" "=" Expression
+
+Expression
+    = Addition
+
+Addition
+    = Multiplication (("+" | "-") Multiplication):*
+
+Multiplication
+    = Exponentiation (("*" | "/") Exponentiation):*
+
+Exponentiation
+    = Prefix ("^" Prefix):*
+
+Prefix
+    = ("-" | "+"):? Postfix
+
+Postfix
+    = Application "!":?
+
+Application
+    = Value ("(" Expression ("," Expression):* ")"):?
+
+Value
+    = NUMBER
+    | IDENTIFIER
+    | "(" Expression ")"
+    | "[" Expression ("," Expression):* (";" Expression ("," Expression):*):* "]"
